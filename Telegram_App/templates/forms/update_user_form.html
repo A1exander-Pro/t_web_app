@@ -1,0 +1,83 @@
+{% extends "includes.html" %}
+{% block content %}
+
+        <!-- partial -->
+<div class="main-panel">
+  <div class="content-wrapper">
+  
+
+    <div class="row">
+              
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Редактировать пользователя</h4>
+                    <form class="form-sample"  action="" method="POST">
+                       {% csrf_token %}
+                      {% comment %} <p class="card-description"> Personal info </p> {% endcomment %}
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Username</label>
+                            <div class="col-sm-9">
+                               {{ form.username }}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                             {{ form.email }}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">ФИО</label>
+                            <div class="col-sm-9">
+                               {{ form.full_name }}
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group row">
+                            <label class="col-sm-3 col-form-label"></label>
+                            <div class="col-sm-4">
+                               <button type="submit"  class="btn btn-inverse-success btn-fw mt-2">Добавить</button>
+                            </div>
+                            <div class="col-sm-5">
+                             
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+            </div>     
+
+
+
+
+
+    
+    </div>
+  </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          
+            
+          <!-- partial -->
+        </div>
+{% endblock content %}
+{% block javascripts %}
+
+{% endblock javascripts %}

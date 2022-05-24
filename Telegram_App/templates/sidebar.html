@@ -1,0 +1,72 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <a class="sidebar-brand brand-logo" href="/dashboard"><i class="mdi mdi-telegram"></i></a>
+        <a class="sidebar-brand brand-logo-mini" href="/dashboard"><i class="mdi mdi-telegram"></i></a>
+    </div>
+    <ul class="nav">
+        <li class="nav-item profile">
+            <div class="profile-desc">
+                <div class="profile-pic">
+                    <div class="count-indicator">
+                        <i class="mdi mdi-account-circle"></i>
+                        <span class="count bg-success"></span>
+                    </div>
+                    <div class="profile-name">
+                        <h5 class="mb-0 font-weight-normal">{{ request.user.username }}</h5>
+                        {% comment %} <span>Gold Member</span> {% endcomment %}
+                    </div>
+                </div>
+                <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+            </div>
+        </li>
+        <li class="nav-item nav-category">
+            <span class="nav-link">Разделы</span>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="/dashboard">
+                <span class="menu-icon">
+                  <i class="mdi mdi-speedometer"></i>
+                </span>
+                <span class="menu-title">Дашборд</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#orders" aria-expanded="false" aria-controls="orders">
+        <span class="menu-icon">
+          <i class="mdi mdi-telegram"></i>
+        </span>
+        <span class="menu-title">Telegram</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="orders">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="/telegram">Список юзеров</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <span class="menu-icon">
+          <i class="mdi mdi-laptop"></i>
+        </span>
+        <span class="menu-title">Пользователи</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-basic">
+        <ul class="nav flex-column sub-menu">
+{#            <li class="nav-item"><a class="nav-link" href="/users">Добавить</a></li>#}
+{#            <li class="nav-item"><a class="nav-link" href="">Пользователи</a></li>#}
+            <li class="nav-item"><a class="nav-link" href="{% url 'users' %}">Пользователи</a></li>
+        </ul>
+      </div>
+    </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" href="logout/">
+        <span class="menu-icon">
+          <i class="mdi mdi-logout"></i>
+        </span>
+                <span class="menu-title">Выйти</span>
+            </a>
+        </li>
+    </ul>
+</nav>
