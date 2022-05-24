@@ -54,6 +54,10 @@ https://api.telegram.org/bot{TOKEN}/setWebhook?url=https://f5ac-193-31-192-28.ng
 ```
 - Получаем ответ, что webhook was set
 
+## Доступ к админке
+- Прописываем в терминале `python manage.py createsuperuser`
+- Входим по придуманному логину и паролю
+
 ГОТОВО!
 
 
