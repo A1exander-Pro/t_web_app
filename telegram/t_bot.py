@@ -24,6 +24,15 @@ class UpdateBot(View):
         return JsonResponse({"ok": True})
 
 
+# def webAppKeyboard(): #создание клавиатуры с webapp кнопкой
+#    keyboard = types.ReplyKeyboardMarkup(row_width=1) #создаем клавиатуру
+#    webAppTest = types.WebAppInfo("https://f5ac-193-31-192-28.ngrok.io/webapp/") #создаем webappinfo - формат хранения url
+#    one_butt = types.KeyboardButton(text="Тестовая страница", web_app=webAppTest) #создаем кнопку типа webapp
+#    keyboard.add(one_butt) #добавляем кнопки в клавиатуру
+#
+#    return keyboard
+
+
 @bot.message_handler(commands=['start'])
 def start_message(message):
     username = message.from_user.username
@@ -39,6 +48,6 @@ def start_message(message):
 
 @bot.message_handler(content_types="web_app_data")  # получаем отправленные данные
 def answer(webAppMes):
-    send_message(webAppMes)
-    send_message(webAppMes.web_app_data.data)
+    # send_message(webAppMes)
+    # send_message(webAppMes.web_app_data.data)
     bot.send_message(webAppMes.chat.id, f"получили инофрмацию из веб-приложения: {webAppMes.web_app_data.data}")
