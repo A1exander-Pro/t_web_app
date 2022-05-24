@@ -15,6 +15,6 @@ def get_telegram_users():
     users = TelegramBotUser.objects.all().values('id', 'username', 'user_id', 'date')
     users_list = [{'id': obj['id'],
                    'username': obj['username'],
-                   'user_id': obj['full_name'],
+                   'user_id': obj['user_id'],
                    'date': obj['date'], } for obj in users]
     return users_list

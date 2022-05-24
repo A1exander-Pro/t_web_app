@@ -71,9 +71,9 @@ jobs:
             echo PRODUCTION=${{ secrets.PRODUCTION }} >> .env
             echo CHAT_ID=${{ secrets.CHAT_ID }} >> .env
             echo TOKEN=${{ secrets.TOKEN }} >> .env
-            sudo docker-compose -f docker-compose.yml stop
-            sudo docker-compose -f docker-compose.yml rm -f web
+            sudo docker compose -f docker-compose.yml stop
+            sudo docker compose -f docker-compose.yml rm -f web
             sudo docker rmi alexanderpronikov/t_web_app:latest
-            sudo docker-compose -f docker-compose.yml up -d
-            sudo docker-compose -f docker-compose.yml exec -T web python manage.py migrate
-            sudo docker-compose -f docker-compose.yml exec -T web python manage.py collectstatic --no-input
+            sudo docker compose -f docker-compose.yml up -d
+            sudo docker compose -f docker-compose.yml exec -T web python manage.py migrate
+            sudo docker compose -f docker-compose.yml exec -T web python manage.py collectstatic --no-input
