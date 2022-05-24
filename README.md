@@ -48,7 +48,10 @@
 - Пишем название кнопки
 
 ## Установка webhook telegram
-- Прописываем в ардесной строке браузера `https://api.telegram.org/bot{TOKEN}/setWebhook?url=https://f5ac-193-31-192-28.ngrok.io/webhook/telegram/bot/`
+- Прописываем в ардесной строке браузера: 
+```sh
+https://api.telegram.org/bot{TOKEN}/setWebhook?url=https://f5ac-193-31-192-28.ngrok.io/webhook/telegram/bot/
+```
 - Получаем ответ, что webhook was set
 
 ГОТОВО!
